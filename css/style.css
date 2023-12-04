@@ -7,30 +7,52 @@
 
 /* Generics */
 
+body {
+    font-family: 'Montserrat', sans-serif;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+ul {
+    list-style-type: none;
+}
+
+img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+section {
+    border: 1px dashed blue;
+    margin-bottom: 30px;
+}
 
 /* Utils */
 .border {
     border: 2px dashed red;
 }
 
+.row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: 0 -5px;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+}
+
 /* Main */
 main {
     display: flex;
     height: max-content;
-}
-
-.main-content {
-    background-color: hsl(221.54deg 23.64% 10.78%);
-    color: white;
-    padding: 0 40px;
-    position: relative;
-    overflow-y: scroll;
-    height: calc(100vh - 80px);
-}
-
-.main-content span {
-    font-size: 2rem;
-    color: red;
 }
 
 /* Sidebar */
@@ -42,34 +64,96 @@ main {
     top: 0;
     left: 0;
     bottom: 0;
-    width: 60px;
+    min-width: 50px;
+    padding: 10px;
     flex-shrink: 0;
 
 }
 
-.sidebar div {
-    rotate: 270deg;
-    translate: 0 100px;
-    font-size: 2rem;
+.icon-group {
+    display: flex;
+}
+
+.icon-group img {
+    width: 30px;
+}
+
+.icon-name {
+    display: none;
 }
 
 
+
+/* Main content */
+.main-content {
+    background-color: hsl(221.54deg 23.64% 10.78%);
+    color: white;
+    padding: 0 30px;
+    position: relative;
+    overflow-y: scroll;
+    height: calc(100vh - 80px);
+}
 
 /* Header */
 
 header {
     position: sticky;
     text-align: right;
-    font-size: 2rem;
     padding-right: 20px;
-    line-height: 80px;
     top: 0;
     left: 0;
     right: 0;
     min-height: 80px;
     background-color: rgba(0, 0, 0, 0.5);
     margin: 0 -40px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
 }
+
+header .btn {
+    border: 2px solid white;
+    border-radius: 20px;
+    padding: 10px 40px;
+
+}
+
+/* Genres list */
+
+.genre-list.row {
+    margin: 30px 0;
+    gap: 20px;
+}
+
+.genre-list a {
+    color: hsl(230deg 2.38% 50.59%);
+    text-transform: uppercase;
+}
+
+/* Sections */
+
+.col-x2 {
+    padding: 0 5px;
+    flex-basis: 50%;
+    border: 1px dashed greenyellow;
+    height: 200px;
+}
+
+.card {
+    background-color: dodgerblue;
+    height: 150px;
+}
+
+.description,
+.subtitle {
+    color: hsl(230deg 2.42% 48.63%);
+}
+
+.subtitle {
+    margin-bottom: 15px;
+}
+
+
 
 /* Footer */
 
