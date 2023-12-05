@@ -165,7 +165,7 @@ hr,
     padding: 10px;
 }
 
-.bottom-bar a {
+.bottom-bar a.download {
     color: hsl(230deg 2.42% 48.63%);
 }
 
@@ -368,6 +368,7 @@ footer span {
 .settings {
     font-size: 12px;
     display: flex;
+    justify-content: flex-end;
     flex-basis: 25%;
     column-gap: 10px;
     align-items: center;
