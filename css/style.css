@@ -56,13 +56,16 @@ section {
     margin-bottom: 10px;
 }
 
+.mb-20 {
+    margin-bottom: 20px;
+}
+
 .rounded {
     border-radius: 50%;
 }
 
 .progress-bar {
-    flex-grow: 1;
-    height: 5px;
+    height: 3px;
     background-color: hsl(230deg 2.42% 48.63%);
     border-radius: 20px;
     position: relative;
@@ -78,8 +81,8 @@ section {
 }
 
 .marker {
-    height: 15px;
-    width: 15px;
+    height: 9px;
+    width: 9px;
     border-radius: 50%;
     background-color: white;
     position: absolute;
@@ -91,7 +94,6 @@ section {
 /* Main */
 main {
     display: flex;
-    height: max-content;
 }
 
 /* Sidebar */
@@ -99,24 +101,107 @@ main {
 .sidebar {
     background-color: black;
     color: white;
-    min-width: 50px;
+    width: 50px;
     padding: 10px;
     flex-shrink: 0;
-
+    position: relative;
+    font-weight: bold;
 }
 
 .icon-group {
     display: flex;
+    align-items: center;
+    column-gap: 5px;
 }
+
+#logo+.icon-name {
+    font-size: 26px;
+}
+
+sup {
+    font-size: 10px;
+}
+
 
 .icon-group img {
     width: 30px;
 }
 
-.icon-name {
+.icon-name,
+.playlist,
+hr,
+.not-xs {
     display: none;
 }
 
+.fa-square-plus {
+    font-size: 60px;
+}
+
+.playlist {
+    margin-top: 20px;
+}
+
+.playlist :not(h5) {
+    color: hsl(230deg 2.42% 48.63%);
+}
+
+.playlist .icon-group {
+    column-gap: 10px;
+}
+
+.playlist .column {
+    row-gap: 20px;
+}
+
+
+/* Bottom bar */
+
+.bottom-bar {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 10px;
+}
+
+.bottom-bar a {
+    color: hsl(230deg 2.42% 48.63%);
+}
+
+
+.download-btn {
+    opacity: 0.4;
+    width: 20px;
+    text-align: center;
+}
+
+.download {
+    margin-bottom: 10px;
+}
+
+.download,
+.user {
+    display: flex;
+    column-gap: 10px;
+    align-items: center;
+    justify-content: center;
+}
+
+.user-btn {
+    width: 30px;
+    background-color: hsl(230deg 2.42% 48.63%);
+    border-radius: 50%;
+    padding: 3px;
+}
+
+.bottom-bar hr {
+    margin: 10px 0;
+    border-color: hsl(230deg 2.42% 48.63%);
+    flex-grow: 1;
+}
+
+.user-btn {}
 
 
 /* Main content */
@@ -126,18 +211,17 @@ main {
     padding: 0 30px;
     overflow-y: auto;
     height: calc(100vh - 100px);
-    width: 100%;
 }
 
 /* Header */
 
 header {
     position: sticky;
-    padding-right: 10px;
+    padding-right: 20px;
     top: 0;
     left: 0;
     right: 0;
-    min-height: 80px;
+    height: 80px;
     background-color: rgba(0, 0, 0, 0.5);
     margin: 0 -30px;
     display: flex;
@@ -214,6 +298,17 @@ footer {
     padding: 0 10px;
 }
 
+footer h5 {
+    font-size: 12px;
+}
+
+footer span {
+    font-size: 10px;
+}
+
+
+
+
 /* Music info */
 
 
@@ -221,15 +316,16 @@ footer {
     display: flex;
     column-gap: 10px;
     flex-basis: 25%;
+    align-items: center;
 }
 
 .small-img {
-    width: 50px;
-    height: 50px;
+    width: 30px;
+    height: 30px;
 }
 
 .music-info p {
-    font-size: 12px;
+    font-size: 10px;
     color: hsl(230deg 2.42% 48.63%);
     font-weight: bold;
 }
@@ -262,6 +358,10 @@ footer {
     column-gap: 10px;
 }
 
+.player .progress-bar {
+    width: 150px;
+}
+
 .player .current-progress {
     width: 30%;
 }
@@ -269,10 +369,15 @@ footer {
 /* Settings */
 
 .settings {
+    font-size: 12px;
     display: flex;
     flex-basis: 25%;
     column-gap: 10px;
     align-items: center;
+}
+
+.volume.progress-bar {
+    width: 70px;
 }
 
 .volume .current-progress {

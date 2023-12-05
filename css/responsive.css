@@ -1,0 +1,23 @@
+/* Spotify S ver (640px-...px) */
+
+@media screen and (min-width: 640px) {
+    .sidebar {
+        width: 200px;
+    }
+
+    #logo {
+        width: 60px;
+    }
+
+    .icon-name,
+    .playlist,
+    hr,
+    .not-xs {
+        display: block;
+    }
+
+    .download,
+    .user {
+        justify-content: flex-start;
+    }
+}
