@@ -26,7 +26,9 @@
 
 <body>
     <main>
-        <nav class="sidebar border">
+
+        <!-- Side Bar -->
+        <nav class="sidebar">
             <ul class="column">
                 <li>
                     <div class="icon-group">
@@ -60,8 +62,10 @@
                 </li>
             </ul>
         </nav>
+
+        <!-- Main content -->
         <div class="main-content">
-            <header class="border">
+            <header>
                 <a href="#" class="btn txt-up">Effettua l'upgrade</a>
             </header>
             <nav class="genres-bar">
@@ -75,6 +79,7 @@
                 </ul>
             </nav>
 
+            <!-- Recently played -->
             <section>
                 <h2>Recently played</h2>
                 <div class="subtitle"></div>
@@ -125,6 +130,7 @@
                 </div>
             </section>
 
+            <!-- Personal section -->
             <section>
                 <h2>Creato per John Doe</h2>
                 <div class="subtitle">Più ascolti, più accurati saranno i suggerimenti.</div>
@@ -146,6 +152,7 @@
                 </div>
             </section>
 
+            <!-- Most popular -->
             <section>
                 <h2>Artisti più popolari</h2>
                 <div class="subtitle">Più ascolti, più accurati saranno i suggerimenti.</div>
@@ -169,8 +176,51 @@
 
         </div>
     </main>
-    <footer class="border">Footer</footer>
 
+    <!-- Footer -->
+    <footer>
+        <div class="music-info">
+            <figure class="small-img">
+                <img src="img/sinister.jpeg" alt="brano">
+            </figure>
+            <div class="song-details">
+                <h5>Sinister</h5>
+                <p>Brano <br> Nome</p>
+            </div>
+            <div class="add-to column">
+                <i class="fa-regular fa-heart"></i>
+                <i class="fa-regular fa-folder"></i>
+            </div>
+        </div>
+
+        <div class="player">
+            <div class="cmd-bar mb-10">
+                <i class="fa-solid fa-shuffle"></i>
+                <i class="fas fa-backward-step"></i>
+                <i class="fa-regular fa-play-circle"></i>
+                <i class="fas fa-backward-step fa-rotate-180"></i>
+                <i class="fa-solid fa-arrow-rotate-right"></i>
+            </div>
+            <div class="buffering">
+                <span class="time">0:25</span>
+                <div class="progress-bar">
+                    <div class="current-progress">
+                        <div class="marker"></div>
+                    </div>
+                </div>
+                <span class="time">4:35</span>
+            </div>
+        </div>
+
+        <div class="settings">
+            <i class="fas fa-list-ul"></i>
+            <i class="fas fa-display"></i>
+            <i class="fas fa-volume-high"></i>
+            <div class="volume progress-bar">
+                <div class="current-progress">
+                </div>
+            </div>
+    </footer>
 </body>
 
 </html>

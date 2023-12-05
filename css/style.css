@@ -60,6 +60,34 @@ section {
     border-radius: 50%;
 }
 
+.progress-bar {
+    flex-grow: 1;
+    height: 5px;
+    background-color: hsl(230deg 2.42% 48.63%);
+    border-radius: 20px;
+    position: relative;
+}
+
+.current-progress {
+    background-color: white;
+    border-radius: 20px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+}
+
+.marker {
+    height: 15px;
+    width: 15px;
+    border-radius: 50%;
+    background-color: white;
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translate(50%, -50%);
+}
+
 /* Main */
 main {
     display: flex;
@@ -69,12 +97,8 @@ main {
 /* Sidebar */
 
 .sidebar {
-    position: sticky;
     background-color: black;
     color: white;
-    top: 0;
-    left: 0;
-    bottom: 0;
     min-width: 50px;
     padding: 10px;
     flex-shrink: 0;
@@ -100,9 +124,8 @@ main {
     background-color: hsl(221.54deg 23.64% 10.78%);
     color: white;
     padding: 0 30px;
-    position: relative;
-    overflow-y: scroll;
-    height: calc(100vh - 80px);
+    overflow-y: auto;
+    height: calc(100vh - 100px);
     width: 100%;
 }
 
@@ -110,7 +133,6 @@ main {
 
 header {
     position: sticky;
-    text-align: right;
     padding-right: 10px;
     top: 0;
     left: 0;
@@ -184,12 +206,75 @@ section .row {
 
 footer {
     background-color: hsl(0deg 0% 15.69%);
-    text-align: center;
-    font-size: 2rem;
     color: white;
-    min-height: 80px;
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
+    height: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px;
+}
+
+/* Music info */
+
+
+.music-info {
+    display: flex;
+    column-gap: 10px;
+    flex-basis: 25%;
+}
+
+.small-img {
+    width: 50px;
+    height: 50px;
+}
+
+.music-info p {
+    font-size: 12px;
+    color: hsl(230deg 2.42% 48.63%);
+    font-weight: bold;
+}
+
+.add-to {
+    justify-content: center;
+    color: hsl(230deg 2.42% 48.63%);
+}
+
+/* Player */
+
+.player {
+    flex-basis: 40%;
+}
+
+.cmd-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.fa-play-circle {
+    font-size: 28px;
+}
+
+.buffering {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    column-gap: 10px;
+}
+
+.player .current-progress {
+    width: 30%;
+}
+
+/* Settings */
+
+.settings {
+    display: flex;
+    flex-basis: 25%;
+    column-gap: 10px;
+    align-items: center;
+}
+
+.volume .current-progress {
+    width: 60%;
 }
