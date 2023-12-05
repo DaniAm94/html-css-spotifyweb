@@ -258,12 +258,9 @@ section .row {
     text-align: center;
 }
 
-.col-x2 {
-    flex-basis: 50%;
-}
-
 .col {
     padding: 0 5px;
+    flex-basis: 50%;
 }
 
 .col>* {

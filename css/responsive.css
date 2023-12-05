@@ -21,3 +21,26 @@
         justify-content: flex-start;
     }
 }
+
+
+/* Spotify Md ver (878px-...px */
+
+@media screen and (min-width: 878px) {
+
+    .col {
+        flex-basis: 25%;
+    }
+
+    .player .progress-bar {
+        width: 280px;
+    }
+
+    .volume.progress-bar {
+        width: 140px;
+    }
+
+    .small-img {
+        width: 40px;
+        height: 40px;
+    }
+}
