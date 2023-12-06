@@ -89,7 +89,38 @@ section {
     top: 50%;
     right: 0;
     transform: translate(50%, -50%);
+    display: none;
 }
+
+.progress-bar:hover .current-progress {
+    background-color: greenyellow;
+}
+
+.progress-bar:hover>.current-progress>.marker {
+    display: block;
+}
+
+.active-bottom::after {
+    height: 3px;
+    background-color: yellowgreen;
+    border-radius: 20px;
+    width: 60%;
+    display: block;
+    margin: 5px auto;
+    content: '';
+}
+
+.genre-list a.active-bottom {
+    color: white;
+}
+
+
+.sidebar .active-left {
+    color: white;
+    border-color: yellowgreen;
+}
+
+
 
 /* Main */
 main {
@@ -100,36 +131,52 @@ main {
 
 .sidebar {
     background-color: black;
-    color: white;
-    width: 50px;
-    padding: 10px;
+    color: hsl(230deg 2.42% 48.63%);
+    width: 60px;
     flex-shrink: 0;
-    position: relative;
     font-weight: bold;
 }
+
+.sidebar img:hover {
+    filter: drop-shadow(0 0 5px white);
+}
+
+.sidebar a {
+    color: hsl(230deg 2.42% 48.63%);
+}
+
+.sidebar a:hover {
+    color: white;
+}
+
+/* Top Bar */
+
+.top-bar {
+    height: calc(100% - 150px);
+    padding: 10px;
+}
+
+#logo {
+    display: none;
+    height: 60px;
+}
+
 
 .icon-group {
     display: flex;
     align-items: center;
     column-gap: 5px;
+    padding-left: 2px;
+    border-left: 3px solid transparent;
 }
 
-#logo+.icon-name {
-    font-size: 26px;
-}
-
-sup {
-    font-size: 10px;
-}
-
-
-.icon-group img {
+.icon-group img:not(#logo) {
     width: 30px;
 }
 
 .icon-name,
 .playlist,
-hr,
+.separator,
 .not-xs {
     display: none;
 }
@@ -140,10 +187,23 @@ hr,
 
 .playlist {
     margin-top: 20px;
+    overflow: hidden;
 }
 
-.playlist :not(h5) {
-    color: hsl(230deg 2.42% 48.63%);
+.playlist h5 {
+    color: white;
+}
+
+.playlist a:hover {
+    color: white;
+}
+
+.playlist li {
+    cursor: pointer;
+}
+
+.playlist li:hover {
+    color: white;
 }
 
 .playlist .icon-group {
@@ -152,32 +212,29 @@ hr,
 
 .playlist .column {
     row-gap: 20px;
+    max-height: 150px;
+    overflow-y: auto;
 }
 
 
 /* Bottom bar */
 
 .bottom-bar {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
     padding: 10px;
-}
-
-.bottom-bar a.download {
-    color: hsl(230deg 2.42% 48.63%);
+    height: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
 }
 
 
 .download-btn {
     opacity: 0.4;
-    width: 20px;
-    text-align: center;
+    width: 24px;
 }
 
-.download {
-    margin-bottom: 10px;
+.download:hover .download-btn {
+    opacity: 1;
 }
 
 .download,
@@ -188,20 +245,21 @@ hr,
     justify-content: center;
 }
 
+a.user {
+    color: white;
+}
+
 .user-btn {
+    margin-top: 20px;
     width: 30px;
     background-color: hsl(230deg 2.42% 48.63%);
     border-radius: 50%;
-    padding: 3px;
 }
 
-.bottom-bar hr {
-    margin: 10px 0;
-    border-color: hsl(230deg 2.42% 48.63%);
-    flex-grow: 1;
+.separator {
+    margin: 15px 0;
+    border: 1px solid hsl(230deg 2.42% 48.63%);
 }
-
-.user-btn {}
 
 
 /* Main content */
@@ -211,6 +269,7 @@ hr,
     padding: 0 30px;
     overflow-y: auto;
     height: calc(100vh - 100px);
+    width: 100%;
 }
 
 /* Header */
@@ -236,6 +295,11 @@ header .btn {
 
 }
 
+header .btn:hover {
+    scale: 1.1;
+    box-shadow: 0 0 10px white;
+}
+
 /* Genres list */
 
 .genre-list.row {
@@ -248,6 +312,10 @@ header .btn {
 
 .genre-list a {
     color: hsl(230deg 2.38% 50.59%);
+}
+
+.genre-list a:hover {
+    color: white;
 }
 
 /* Sections */
@@ -266,6 +334,30 @@ section .row {
 .col>* {
     margin-bottom: 10px;
 }
+
+.card {
+    position: relative;
+    cursor: pointer;
+}
+
+.layover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none;
+}
+
+.card:hover .layover {
+    display: flex;
+}
+
+
 
 .description,
 .subtitle {
@@ -316,6 +408,10 @@ footer span {
     align-items: center;
 }
 
+.music-info i:hover {
+    color: white;
+}
+
 .small-img {
     width: 30px;
     height: 30px;
@@ -342,6 +438,11 @@ footer span {
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+
+.cmd-bar i:hover {
+    scale: 1.4;
+    box-shadow: 0 0 10px white;
 }
 
 .fa-play-circle {
@@ -372,6 +473,10 @@ footer span {
     flex-basis: 25%;
     column-gap: 10px;
     align-items: center;
+}
+
+.settings i:hover {
+    scale: 1.3;
 }
 
 .volume.progress-bar {

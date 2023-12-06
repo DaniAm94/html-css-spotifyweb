@@ -2,16 +2,20 @@
 
 @media screen and (min-width: 640px) {
     .sidebar {
-        width: 200px;
+        width: 240px;
+    }
+
+    #logo-small {
+        display: none;
     }
 
     #logo {
-        width: 60px;
+        display: block;
     }
 
     .icon-name,
     .playlist,
-    hr,
+    .separator,
     .not-xs {
         display: block;
     }
@@ -19,6 +23,10 @@
     .download,
     .user {
         justify-content: flex-start;
+    }
+
+    .user-btn {
+        margin-top: 0px;
     }
 }
 
