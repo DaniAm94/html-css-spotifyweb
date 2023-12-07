@@ -78,3 +78,36 @@
         column-gap: 20px;
     }
 }
+
+@media screen and (max-height: 755px) {
+
+
+    .top-bar .playlist {
+        display: none;
+    }
+
+}
+
+@media screen and (max-height: 455px) {
+    .bottom-bar {
+        display: none;
+    }
+
+}
+
+@media screen and (max-height: 320px) {
+    .top-bar li:not(:first-child) {
+        display: none;
+
+    }
+}
+
+@media screen and (max-height: 199px) {
+    .top-bar .column {
+        display: none;
+    }
+
+    .top-bar {
+        padding: 0;
+    }
+}
