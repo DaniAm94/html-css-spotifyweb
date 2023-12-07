@@ -269,7 +269,7 @@ a.user {
     padding: 0 30px;
     overflow-y: auto;
     height: calc(100vh - 100px);
-    width: 100%;
+    flex-grow: 1;
 }
 
 /* Header */
